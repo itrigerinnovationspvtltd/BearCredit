@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="currentColor">
+  <!-- Bear Head Outline -->
+  <g>
+    <!-- Left Ear -->
+    <circle cx="50" cy="50" r="25"/>
+    <!-- Right Ear -->
+    <circle cx="150" cy="50" r="25"/>
+    
+    <!-- Main Head Shape -->
+    <path d="M 35 70 
+             L 25 100 
+             L 30 140 
+             L 50 170 
+             L 100 180 
+             L 150 170 
+             L 170 140 
+             L 175 100 
+             L 165 70 
+             L 150 55 
+             L 100 45 
+             L 50 55 
+             Z"/>
+    
+    <!-- Left Eye (angular) -->
+    <path d="M 60 85 L 75 80 L 80 95 L 65 100 Z"/>
+    
+    <!-- Right Eye (angular) -->
+    <path d="M 120 80 L 135 85 L 130 100 L 115 95 Z"/>
+    
+    <!-- Nose Bridge -->
+    <path d="M 85 95 L 100 90 L 115 95 L 100 140 Z" fill="currentColor"/>
+    
+    <!-- Nose -->
+    <polygon points="90,135 100,125 110,135 100,145"/>
+    
+    <!-- Mouth Lines -->
+    <path d="M 100 145 L 85 155" stroke="currentColor" stroke-width="3" fill="none"/>
+    <path d="M 100 145 L 115 155" stroke="currentColor" stroke-width="3" fill="none"/>
+    
+    <!-- Chin/Muzzle -->
+    <path d="M 75 145 L 70 160 L 85 170 L 100 175 L 115 170 L 130 160 L 125 145 Z" fill="#DDD"/>
+  </g>
+</svg>
+
