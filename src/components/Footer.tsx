@@ -1,5 +1,13 @@
-import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Link } from "react-router-dom";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -10,27 +18,34 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6 group">
               <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-              <img 
-                src="/bear-logo.png" 
-                alt="Bear Credit Logo" 
-                className={`w-full h-full object-contain transition-all `}
-              />
+                <img
+                  src="/bear-logo.png"
+                  alt="Bear Credit Logo"
+                  className={`w-full h-full object-contain transition-all `}
+                />
               </div>
               <div className="text-2xl font-black text-white">
                 Bear <span className="text-primary">Credit</span>
               </div>
             </Link>
             <p className="text-white/80 mb-6 leading-relaxed max-w-md">
-              Take control of your credit and build a better financial future with our expert guidance and personalized consultation services.
+              Take control of your credit and build a better financial future
+              with our expert guidance and personalized consultation services.
             </p>
             <div className="space-y-3">
-              <a href="tel:+18173076564" className="flex items-center text-white/80 hover:text-white transition-colors group">
+              <a
+                href="tel:+18173076564"
+                className="flex items-center text-white/80 hover:text-white transition-colors group"
+              >
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-3 group-hover:bg-white/20 transition-colors">
                   <Phone size={18} />
                 </div>
                 <span className="font-semibold">+1 (817) 307-6564</span>
               </a>
-              <a href="mailto:support@bearcredit.net" className="flex items-center text-white/80 hover:text-white transition-colors group">
+              <a
+                href="mailto:support@bearcredit.net"
+                className="flex items-center text-white/80 hover:text-white transition-colors group"
+              >
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-3 group-hover:bg-white/20 transition-colors">
                   <Mail size={18} />
                 </div>
@@ -40,7 +55,9 @@ const Footer = () => {
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-3">
                   <MapPin size={18} />
                 </div>
-                <span className="font-semibold">704 Cheryl St, Crowley, TX 76036</span>
+                <span className="font-semibold">
+                  704 Cheryl St, Crowley, TX 76036
+                </span>
               </div>
             </div>
           </div>
@@ -50,14 +67,14 @@ const Footer = () => {
             <h4 className="text-lg font-black mb-6 text-white">Quick Links</h4>
             <ul className="space-y-3">
               {[
-                { to: '/', label: 'Home' },
-                { to: '/about', label: 'About Us' },
-                { to: '/services', label: 'Services' },
-                { to: '/contact', label: 'Contact' }
+                { to: "/", label: "Home" },
+                { to: "/about", label: "About Us" },
+                { to: "/services", label: "Services" },
+                { to: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.to}>
-                  <Link 
-                    to={link.to} 
+                  <Link
+                    to={link.to}
                     className="text-white/80 hover:text-white transition-colors font-semibold hover:translate-x-1 inline-block transform transition-transform"
                   >
                     {link.label}
@@ -84,15 +101,25 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-white/80 font-semibold space-y-2">
               <p>&copy; 2025 Bear Credit. All rights reserved.</p>
-              <p className="text-sm">Developed by Itriger Innovations Private Limited</p>
+              <p className="text-sm">
+                Developed by{" "}
+                <a
+                  href="https://itrigerinnovations.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  Itriger Innovations Private Limited
+                </a>
+              </p>
             </div>
             <div className="flex items-center gap-4">
               <span className="text-white/80 font-semibold">Follow Us:</span>
               {[
-                { icon: Facebook, href: '#' },
-                { icon: Twitter, href: '#' },
-                { icon: Linkedin, href: '#' },
-                { icon: Instagram, href: '#' }
+                { icon: Facebook, href: "#" },
+                { icon: Twitter, href: "#" },
+                { icon: Linkedin, href: "#" },
+                { icon: Instagram, href: "#" },
               ].map((social, index) => (
                 <a
                   key={index}
