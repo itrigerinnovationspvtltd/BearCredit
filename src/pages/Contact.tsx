@@ -1,40 +1,55 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '../components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import { Input } from '../components/ui/input';
-import { Textarea } from '../components/ui/textarea';
-import { Phone, Mail, MapPin, Clock, CheckCircle, MessageSquare } from 'lucide-react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "../components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  CheckCircle,
+  MessageSquare,
+} from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     setIsSubmitted(true);
-    
+
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
       });
     }, 3000);
   };
@@ -45,8 +60,11 @@ const Contact = () => {
       <section className="relative bg-gradient-to-br from-[#F5F0E8] via-white to-[#FAF7F2] py-20 md:py-32 overflow-hidden">
         {/* Animated background blobs */}
         <div className="absolute top-20 -left-20 w-64 h-64 bg-[#8B6F47]/20 rounded-full blur-3xl blob-animate"></div>
-        <div className="absolute bottom-20 -right-20 w-80 h-80 bg-[#D4C5B0]/30 rounded-full blur-3xl blob-animate" style={{animationDelay: '2s'}}></div>
-        
+        <div
+          className="absolute bottom-20 -right-20 w-80 h-80 bg-[#D4C5B0]/30 rounded-full blur-3xl blob-animate"
+          style={{ animationDelay: "2s" }}
+        ></div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left - Content */}
@@ -54,33 +72,53 @@ const Contact = () => {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md border border-primary/20 animate-fade-in">
                 <MessageSquare className="w-4 h-4 text-primary" />
-                <span className="text-sm font-semibold text-foreground">Free Consultation Available</span>
+                <span className="text-sm font-semibold text-foreground">
+                  Free Consultation Available
+                </span>
               </div>
-              
+
               {/* Headline with Motion Text */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight animate-fade-in" style={{animationDelay: '0.2s'}}>
+              <h1
+                className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight animate-fade-in"
+                style={{ animationDelay: "0.2s" }}
+              >
                 <span className="text-foreground">Ready to Start Your</span>
                 <br />
                 <span className="text-shimmer bg-gradient-to-r from-primary via-primary/80 to-primary">
                   Credit Journey?
                 </span>
               </h1>
-              
+
               {/* Subheadline */}
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light animate-fade-in" style={{animationDelay: '0.4s'}}>
-                Fill out the form below, and our team will reach out to you to schedule your free consultation. Your financial comeback starts with one conversation.
+              <p
+                className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-light animate-fade-in"
+                style={{ animationDelay: "0.4s" }}
+              >
+                Fill out the form below, and our team will reach out to you to
+                schedule your free consultation. Your financial comeback starts
+                with one conversation.
               </p>
-              
+
               {/* Quick Stats */}
-              <div className="grid grid-cols-3 gap-4 pt-4 animate-fade-in" style={{animationDelay: '0.6s'}}>
+              <div
+                className="grid grid-cols-3 gap-4 pt-4 animate-fade-in"
+                style={{ animationDelay: "0.6s" }}
+              >
                 {[
-                  { value: '24h', label: 'Response Time' },
-                  { value: 'Free', label: 'Consultation' },
-                  { value: 'Expert', label: 'Guidance' }
+                  { value: "24h", label: "Response Time" },
+                  { value: "Free", label: "Consultation" },
+                  { value: "Expert", label: "Guidance" },
                 ].map((stat, index) => (
-                  <div key={index} className="text-center p-4 bg-white rounded-xl shadow-md border border-border">
-                    <div className="text-2xl md:text-3xl font-black text-primary">{stat.value}</div>
-                    <div className="text-xs md:text-sm text-muted-foreground font-medium mt-1">{stat.label}</div>
+                  <div
+                    key={index}
+                    className="text-center p-4 bg-white rounded-xl shadow-md border border-border"
+                  >
+                    <div className="text-2xl md:text-3xl font-black text-primary">
+                      {stat.value}
+                    </div>
+                    <div className="text-xs md:text-sm text-muted-foreground font-medium mt-1">
+                      {stat.label}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -91,7 +129,7 @@ const Contact = () => {
               <div className="relative">
                 {/* Decorative background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-[#D4C5B0]/30 rounded-3xl transform -rotate-3 blur-sm"></div>
-                
+
                 {/* Image container */}
                 <div className="relative bg-white p-6 rounded-3xl shadow-2xl">
                   <img
@@ -99,7 +137,7 @@ const Contact = () => {
                     alt="Professional consultation and customer support"
                     className="w-full h-[400px] md:h-[500px] object-cover rounded-2xl"
                   />
-                  
+
                   {/* Floating badge */}
                   <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
                     <CheckCircle className="w-5 h-5" />
@@ -124,7 +162,8 @@ const Contact = () => {
                     Get Your Free Consultation
                   </CardTitle>
                   <CardDescription className="text-lg text-muted-foreground">
-                    Fill out the form below and we'll contact you within 24 hours to schedule your free consultation.
+                    Fill out the form below and we'll contact you within 24
+                    hours to schedule your free consultation.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-0">
@@ -133,15 +172,21 @@ const Contact = () => {
                       <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-scale-in">
                         <CheckCircle className="w-12 h-12 text-white" />
                       </div>
-                      <h3 className="text-2xl font-black text-foreground mb-3">Thank You!</h3>
+                      <h3 className="text-2xl font-black text-foreground mb-3">
+                        Thank You!
+                      </h3>
                       <p className="text-lg text-muted-foreground max-w-md mx-auto">
-                        We've received your message and will contact you within 24 hours to schedule your free consultation.
+                        We've received your message and will contact you within
+                        24 hours to schedule your free consultation.
                       </p>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-bold text-foreground mb-2">
+                        <label
+                          htmlFor="name"
+                          className="block text-sm font-bold text-foreground mb-2"
+                        >
                           Full Name *
                         </label>
                         <Input
@@ -157,7 +202,10 @@ const Contact = () => {
                       </div>
 
                       <div>
-                        <label htmlFor="email" className="block text-sm font-bold text-foreground mb-2">
+                        <label
+                          htmlFor="email"
+                          className="block text-sm font-bold text-foreground mb-2"
+                        >
                           Email Address *
                         </label>
                         <Input
@@ -173,7 +221,10 @@ const Contact = () => {
                       </div>
 
                       <div>
-                        <label htmlFor="phone" className="block text-sm font-bold text-foreground mb-2">
+                        <label
+                          htmlFor="phone"
+                          className="block text-sm font-bold text-foreground mb-2"
+                        >
                           Phone Number *
                         </label>
                         <Input
@@ -189,7 +240,10 @@ const Contact = () => {
                       </div>
 
                       <div>
-                        <label htmlFor="message" className="block text-sm font-bold text-foreground mb-2">
+                        <label
+                          htmlFor="message"
+                          className="block text-sm font-bold text-foreground mb-2"
+                        >
                           Message / Credit Concern *
                         </label>
                         <Textarea
@@ -204,8 +258,8 @@ const Contact = () => {
                         />
                       </div>
 
-                      <Button 
-                        type="submit" 
+                      <Button
+                        type="submit"
                         size="lg"
                         className="button-hover w-full hover:bg-[#453021] hover:text-white bg-white text-[#453021] h-14 text-lg font-bold rounded-xl shadow-xl"
                       >
@@ -213,7 +267,8 @@ const Contact = () => {
                       </Button>
 
                       <p className="text-sm text-muted-foreground text-center">
-                        By submitting this form, you agree to our privacy policy and terms of service.
+                        By submitting this form, you agree to our privacy policy
+                        and terms of service.
                       </p>
                     </form>
                   )}
@@ -237,37 +292,43 @@ const Contact = () => {
                   {[
                     {
                       icon: Phone,
-                      title: 'Phone',
-                      content: '(555) 123-4567',
-                      subtext: 'Mon-Fri, 9AM-6PM EST'
+                      title: "Phone",
+                      content: "+1 (817) 307-6564",
+                      subtext: "Mon-Fri, 9AM-6PM CST",
                     },
                     {
                       icon: Mail,
-                      title: 'Email',
-                      content: 'support@bearcredit.com',
-                      subtext: 'We respond within 24 hours'
+                      title: "Email",
+                      content: "support@bearcredit.net",
+                      subtext: "We respond within 24 hours",
                     },
                     {
                       icon: MapPin,
-                      title: 'Office',
-                      content: '123 Financial Street',
-                      subtext: 'New York, NY 10001'
+                      title: "Office",
+                      content: "704 Cheryl St",
+                      subtext: "Crowley, TX 76036",
                     },
                     {
                       icon: Clock,
-                      title: 'Business Hours',
-                      content: 'Monday - Friday',
-                      subtext: '9:00 AM - 6:00 PM EST'
-                    }
+                      title: "Business Hours",
+                      content: "Monday - Friday",
+                      subtext: "9:00 AM - 6:00 PM CST",
+                    },
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
                         <item.icon className="w-6 h-6 text-[#453021]" />
                       </div>
                       <div>
-                        <div className="font-bold text-[#453021] text-sm mb-1">{item.title}</div>
-                        <div className="text-[#453021] font-semibold">{item.content}</div>
-                        <div className="text-[#453021] text-sm mt-1">{item.subtext}</div>
+                        <div className="font-bold text-[#453021] text-sm mb-1">
+                          {item.title}
+                        </div>
+                        <div className="text-[#453021] font-semibold">
+                          {item.content}
+                        </div>
+                        <div className="text-[#453021] text-sm mt-1">
+                          {item.subtext}
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -283,10 +344,10 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent className="p-0 space-y-3">
                   {[
-                    { text: 'View Our Services', link: '/services' },
-                    { text: 'About Bear Credit', link: '/about' },
-                    { text: 'Success Stories', link: '/' },
-                    { text: 'FAQs', link: '/services' }
+                    { text: "View Our Services", link: "/services" },
+                    { text: "About Bear Credit", link: "/about" },
+                    { text: "Success Stories", link: "/" },
+                    { text: "FAQs", link: "/services" },
                   ].map((link, index) => (
                     <Link key={index} to={link.link}>
                       <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-secondary transition-colors group">
@@ -429,7 +490,7 @@ const Contact = () => {
       {/* CTA Section */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-[#8B6F47] via-[#6B5538] to-[#5D4A2F] gradient-animate text-white overflow-hidden relative">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-20"></div>
-        
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="animate-fade-in">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
@@ -437,17 +498,22 @@ const Contact = () => {
               <br />
               <span className="text-white/90">Starts Here</span>
             </h2>
-            
+
             <p className="text-xl md:text-2xl text-white/90 mb-10 font-light max-w-2xl mx-auto">
-              Don't wait another day. Take control of your credit and transform your financial future.
+              Don't wait another day. Take control of your credit and transform
+              your financial future.
             </p>
 
-            <Button size="lg" className="button-hover bg-white text-[#453021] hover:bg-white/90 px-10 py-6 text-lg font-bold rounded-xl shadow-2xl" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <Button
+              size="lg"
+              className="button-hover bg-white text-[#453021] hover:bg-white/90 px-10 py-6 text-lg font-bold rounded-xl shadow-2xl"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               Get Started Today
             </Button>
 
             <p className="text-white/80 mt-8 text-sm">
-              ✓ Free Consultation  •  ✓ No Obligation  •  ✓ 24h Response Time
+              ✓ Free Consultation • ✓ No Obligation • ✓ 24h Response Time
             </p>
           </div>
         </div>

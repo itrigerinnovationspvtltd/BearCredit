@@ -24,23 +24,23 @@ const Footer = () => {
               Take control of your credit and build a better financial future with our expert guidance and personalized consultation services.
             </p>
             <div className="space-y-3">
-              <a href="tel:5551234567" className="flex items-center text-white/80 hover:text-white transition-colors group">
+              <a href="tel:+18173076564" className="flex items-center text-white/80 hover:text-white transition-colors group">
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-3 group-hover:bg-white/20 transition-colors">
                   <Phone size={18} />
                 </div>
-                <span className="font-semibold">(555) 123-4567</span>
+                <span className="font-semibold">+1 (817) 307-6564</span>
               </a>
-              <a href="mailto:support@bearcredit.com" className="flex items-center text-white/80 hover:text-white transition-colors group">
+              <a href="mailto:support@bearcredit.net" className="flex items-center text-white/80 hover:text-white transition-colors group">
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-3 group-hover:bg-white/20 transition-colors">
                   <Mail size={18} />
                 </div>
-                <span className="font-semibold">support@bearcredit.com</span>
+                <span className="font-semibold">support@bearcredit.net</span>
               </a>
               <div className="flex items-center text-white/80">
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mr-3">
                   <MapPin size={18} />
                 </div>
-                <span className="font-semibold">123 Financial Street, NY 10001</span>
+                <span className="font-semibold">704 Cheryl St, Crowley, TX 76036</span>
               </div>
             </div>
           </div>
@@ -82,9 +82,10 @@ const Footer = () => {
         {/* Social Media & Copyright */}
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-white/80 font-semibold">
-              &copy; 2024 Bear Credit. All rights reserved.
-            </p>
+            <div className="text-white/80 font-semibold space-y-2">
+              <p>&copy; 2025 Bear Credit. All rights reserved.</p>
+              <p className="text-sm">Developed by Itriger Innovations Private Limited</p>
+            </div>
             <div className="flex items-center gap-4">
               <span className="text-white/80 font-semibold">Follow Us:</span>
               {[
