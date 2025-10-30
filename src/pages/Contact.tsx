@@ -305,8 +305,8 @@ const Contact = () => {
                     {
                       icon: MapPin,
                       title: "Office",
-                      content: "704 Cheryl St",
-                      subtext: "Crowley, TX 76036",
+                      content: "Mansfield, TX 76063",
+                      subtext: "",
                     },
                     {
                       icon: Clock,

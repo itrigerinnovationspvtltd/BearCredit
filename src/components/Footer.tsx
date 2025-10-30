@@ -56,7 +56,7 @@ const Footer = () => {
                   <MapPin size={18} />
                 </div>
                 <span className="font-semibold">
-                  704 Cheryl St, Crowley, TX 76036
+                Mansfield, TX 76063
                 </span>
               </div>
             </div>

@@ -1,0 +1,64 @@
+RewriteEngine On
+
+# Avoid content negotiation edge cases
+Options -MultiViews
+
+# Serve existing files/directories as-is
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Explicit SPA route handling (optional/explicit for clarity)
+RewriteRule ^about/?$ /index.html [L]
+RewriteRule ^services/?$ /index.html [L]
+RewriteRule ^contact/?$ /index.html [L]
+
+# Fallback: route everything else to the SPA entry
+RewriteRule ^ /index.html [L]
+
+# Security: prevent direct access to sensitive files
+<Files ".htaccess">
+    Order Allow,Deny
+    Deny from all
+    Satisfy All
+    Require all denied
+</Files>
+
+<Files "*.log">
+    Order Allow,Deny
+    Deny from all
+    Satisfy All
+    Require all denied
+</Files>
+
+# Enable compression for better performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Set cache headers for static assets (Vite outputs to /assets)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    <FilesMatch "^assets/.*$">
+        ExpiresDefault "access plus 1 year"
+    </FilesMatch>
+</IfModule>
+
